@@ -4,6 +4,7 @@ import java.net.URL;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.Random;
 
 /**
@@ -106,5 +107,18 @@ public class utils {
             hashMap.put(dataString[0],dataString[1]);
         }
         return hashMap;
+    }
+
+    public String getActionsInJson(LinkedList<String> actionList){
+        if(actionList.isEmpty()){
+            return "[]";
+        }
+        String returnedStr = "[";
+        for (String action : actionList){
+            returnedStr = returnedStr + action + ",";
+        }
+        returnedStr = returnedStr.substring(0, returnedStr.length() - 1); // костыль!!!
+        returnedStr = returnedStr + "]";
+        return returnedStr;
     }
 }

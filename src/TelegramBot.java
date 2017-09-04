@@ -2,36 +2,29 @@
  * Created by Азат on 14.08.2017.
  */
 
-import java.awt.image.RenderedImage;
-import java.util.ArrayList;
-import java.util.List;
-
 import org.telegram.telegrambots.ApiContextInitializer;
-import org.telegram.telegrambots.api.methods.GetFile;
 import org.telegram.telegrambots.api.objects.*;
-import org.telegram.telegrambots.api.objects.File;
 import org.telegram.telegrambots.exceptions.TelegramApiException;
 import org.telegram.telegrambots.TelegramBotsApi;
 import org.telegram.telegrambots.api.methods.send.SendMessage;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
-import org.telegram.telegrambots.api.objects.replykeyboard.ReplyKeyboardMarkup;
-import org.telegram.telegrambots.api.objects.replykeyboard.buttons.KeyboardRow;
 
-import javax.imageio.ImageIO;
-import java.io.*;
 import java.util.Map;
 
-public class SimpleBot extends TelegramLongPollingBot {
+public class TelegramBot extends TelegramLongPollingBot {
     private Map<String,String> map;
-    public static void main(String[] args) {
+    private VkController controller = null;
+    TelegramBot(VkController controller){
+        this.controller = controller;
         ApiContextInitializer.init();
         TelegramBotsApi telegramBotsApi = new TelegramBotsApi();
         try {
-            telegramBotsApi.registerBot(new SimpleBot());
+            telegramBotsApi.registerBot(this);
         } catch (TelegramApiException e) {
             e.printStackTrace();
         }
     }
+
 
     @Override
     public String getBotUsername() {
@@ -47,7 +40,7 @@ public class SimpleBot extends TelegramLongPollingBot {
     public void onUpdateReceived(Update update) {
         Message message = update.getMessage();
         System.out.println(update.getMessage().getChatId());
-
+        sendMsg(message, controller.onUpdateReceivedTelegram(update));
 
         /*if (message != null && message.hasText()) {
             processingMessage(message);

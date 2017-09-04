@@ -12,7 +12,8 @@ import java.io.BufferedReader;
  * Created by yar 09.09.2009
  */
 public class HttpServer {
-    HttpServer(VkConnect connect) throws Throwable{
+
+    HttpServer(VkController connect) throws Throwable{
         ServerSocket ss = new ServerSocket(8080);
         while (true) {
             Socket s = ss.accept();
@@ -28,10 +29,10 @@ public class HttpServer {
         private Socket s;
         private InputStream is;
         private OutputStream os;
-        private VkConnect connect;
+        private VkController controller;
 
-        private SocketProcessor(Socket s, VkConnect connect) throws Throwable {
-            this.connect = connect;
+        private SocketProcessor(Socket s, VkController connect) throws Throwable {
+            this.controller = connect;
             this.s = s;
             this.is = s.getInputStream();
             this.os = s.getOutputStream();
@@ -41,7 +42,7 @@ public class HttpServer {
         public void run() {
             try {
                 String[] dataArray = getInputHeaders();
-                String action = updateData(dataArray[1]);
+                String action = getActions(dataArray[1]);
                 writeResponse(action);
             } catch (Throwable t) {
                 /*do nothing*/
@@ -81,8 +82,9 @@ public class HttpServer {
             String[] inputDataArray = inputDate.split(splitStr);
             return  inputDataArray;
         }
-        private String updateData(String urlData){
-            return this.connect.getAction(urlData);
+
+        private String getActions(String urlData){
+            return controller.onUpdateReceivedVk(urlData);
         }
 
     }

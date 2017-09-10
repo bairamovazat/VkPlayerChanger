@@ -14,10 +14,13 @@
 	"permissions": [],
 
 	"browser_action": {
- 	"default_title": "Управление плеером Vk",
- 	"default_icon": "icon/128x128.png"
+ 		"default_title": "Управление плеером Vk",
+ 		"default_icon": "icon/128x128.png",
+		"default_popup": "popup.html"
 	},
-
+	"externally_connectable": {
+		"matches": ["*://vk.com/*"]
+	},
 	"background": {
     	"persistent": true,
     	"page": "background.html"

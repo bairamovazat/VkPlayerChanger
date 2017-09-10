@@ -13,9 +13,9 @@ import java.util.Map;
 
 public class TelegramBot extends TelegramLongPollingBot {
     private Map<String,String> map;
-    private VkController controller = null;
+    private VkController control = null;
     TelegramBot(VkController controller){
-        this.controller = controller;
+        this.control = controller;
         ApiContextInitializer.init();
         TelegramBotsApi telegramBotsApi = new TelegramBotsApi();
         try {
@@ -39,8 +39,7 @@ public class TelegramBot extends TelegramLongPollingBot {
     @Override
     public void onUpdateReceived(Update update) {
         Message message = update.getMessage();
-        System.out.println(update.getMessage().getChatId());
-        sendMsg(message, controller.onUpdateReceivedTelegram(update));
+        sendMsg(message, control.onUpdateReceivedTelegram(update));
 
         /*if (message != null && message.hasText()) {
             processingMessage(message);

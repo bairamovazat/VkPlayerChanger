@@ -29,10 +29,10 @@ public class HttpServer {
         private Socket s;
         private InputStream is;
         private OutputStream os;
-        private VkController controller;
+        private VkController control;
 
         private SocketProcessor(Socket s, VkController connect) throws Throwable {
-            this.controller = connect;
+            this.control = connect;
             this.s = s;
             this.is = s.getInputStream();
             this.os = s.getOutputStream();
@@ -84,7 +84,7 @@ public class HttpServer {
         }
 
         private String getActions(String urlData){
-            return controller.onUpdateReceivedVk(urlData);
+            return control.onUpdateReceivedVk(urlData);
         }
 
     }

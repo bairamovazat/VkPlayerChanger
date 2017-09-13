@@ -1,24 +1,41 @@
 /**
  * Created by Азат on 27.08.2017.
  */
+import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.io.InputStreamReader;
-import java.io.BufferedReader;
+import java.util.HashMap;
+import java.util.concurrent.SynchronousQueue;
+import java.util.concurrent.TimeUnit;
 
 /**
  * Created by yar 09.09.2009
  */
 public class HttpServer {
 
-    HttpServer(VkController connect) throws Throwable{
+    public static void main(String[] args) throws Throwable {
+        HttpServer server = new HttpServer();
+    }
+
+    HttpServer() throws Throwable{
         ServerSocket ss = new ServerSocket(8080);
+        SocketProcessor socketProcessor = null;
         while (true) {
             Socket s = ss.accept();
+
             System.err.println("Client accepted");
-            new Thread(new SocketProcessor(s, connect)).start();
+            new Thread(new SocketProcessor(s)).start();
+        }
+    }
+
+    HttpServer(VkController answerObj) throws Throwable{
+        ServerSocket ss = new ServerSocket(8080);
+        SocketProcessor socketProcessor = null;
+        while (true) {
+            Socket s = ss.accept();
+
+            System.err.println("Client accepted");
+            new SocketProcessor(s, answerObj);
         }
     }
 
@@ -29,45 +46,94 @@ public class HttpServer {
         private Socket s;
         private InputStream is;
         private OutputStream os;
-        private VkController control;
+        private VkController answerObj;
+        private String headers[];
 
-        private SocketProcessor(Socket s, VkController connect) throws Throwable {
-            this.control = connect;
+        private SocketProcessor(Socket s) throws Throwable {
+            this.s = s;
+            this.is = s.getInputStream();
+            this.os = s.getOutputStream();
+            new Thread(this);
+        }
+
+        private SocketProcessor(Socket s, VkController answerObj) throws Throwable {
+            this.answerObj = answerObj;
             this.s = s;
             this.is = s.getInputStream();
             this.os = s.getOutputStream();
         }
 
-
         public void run() {
+
             try {
-                String[] dataArray = getInputHeaders();
-                String action = getActions(dataArray[1]);
-                writeResponse(action);
+                processHeaders();
+                //String action = getActions(dataArray[1]);
+                //TimeUnit.SECONDS.sleep(10);
+                //writeResponse(action);
+                sendResponse();
             } catch (Throwable t) {
-                /*do nothing*/
+                t.printStackTrace();
             } finally {
                 try {
                     s.close();
                 } catch (Throwable t) {
-                    /*do nothing*/
+                    /* do nothing */
                 }
             }
             System.err.println("Client processing finished");
         }
+        private String defaultResponse(){
+            HashMap<String, String> getDataMap = utils.urlDataToMap(this.headers[1]);
 
-        private void writeResponse(String s) throws Throwable {
+            System.out.println(getDataMap.toString());
+            int sleepTime = Integer.parseInt(getDataMap.getOrDefault("time", "0"));
+            System.err.println("Заснул на " + sleepTime + " секунд");
+            try {
+                TimeUnit.SECONDS.sleep(sleepTime);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            String str1 = "Я спал a ";
+            String str2 = Integer.toString(sleepTime);
+            String str3 = " seconddddddddddddddddd1234567891";
+            String str4 = str1 + str2 + str3 ;
+            return (str4);
+
+        }
+
+
+        private void sendResponse(){
+            String response;
+            if(this.answerObj != null){
+                response = this.answerObj.getVkResponse(utils.urlDataToMap(this.headers[1]));
+            }else{
+                response = defaultResponse();
+            }
+            writeResponse(response);
+        }
+
+
+        private void writeResponse(String s) {
             String response = "HTTP/1.1 200 OK\r\n" +
                     "Server: HTTPServer\r\n" +
-                    "Content-Type: text/html\r\n" +
+                    "Content-Type: text/html;charset=UTF-8\r\n" +
                     "Content-Length: " + s.length() + "\r\n" +
                     "Connection: close\r\n\r\n";
             String result = response + s;
-            os.write(result.getBytes());
-            os.flush();
+
+            try {
+                os.write(result.getBytes("UTF-8")); //!!!!!!!!!!!!!Спросит у Марселя, почему с UTF-8 теряется в конце n буков, если в ответе n русских букв
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            try {
+                os.flush();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
 
-        private String[] getInputHeaders() throws Throwable {
+        private void processHeaders() throws Throwable {
             BufferedReader br = new BufferedReader(new InputStreamReader(is));
             String inputDate = "";
             String splitStr = " | ";
@@ -80,12 +146,12 @@ public class HttpServer {
                 inputDate = inputDate + s + splitStr;
             }
             String[] inputDataArray = inputDate.split(splitStr);
-            return  inputDataArray;
+            this.headers = inputDataArray;
         }
 
-        private String getActions(String urlData){
-            return control.onUpdateReceivedVk(urlData);
-        }
+        /*private String getActions(String urlData){
+            return answerObj.onUpdateReceivedVk(urlData);
+        }*/
 
     }
 }

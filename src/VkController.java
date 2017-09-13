@@ -6,7 +6,7 @@ import java.util.LinkedList;
 /**
  * Created by Азат on 03.09.2017.
  */
-public class VkController {
+public class VkController implements Response{
 
     public static void main(String[] args) {
 
@@ -35,5 +35,14 @@ public class VkController {
         return "";
     }
 
+    @Override
+    public String getVkResponse(HashMap<String, String> getDataMap) {
+        return "";
+    }
+
+    @Override
+    public String getTelegramResponse(String str) {
+        return "";
+    }
 }
 

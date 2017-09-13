@@ -1,48 +1,28 @@
 import org.telegram.telegrambots.api.objects.Update;
 
 import java.util.HashMap;
-import java.util.LinkedList;
 
 /**
  * Created by Азат on 03.09.2017.
  */
-public class VkController implements Response{
+public class VkController {
 
     public static void main(String[] args) {
-
+        VkController controller = new VkController();
     }
 
-    TelegramBot telegram = null;
-    HttpServer vk = null;
+    private TelegramBot telegram = null;
+    private ExtensionServer vk = null;
+    private Communication communication = null;
     VkController(){
-        telegram = new TelegramBot(this);
-        try {
-            vk = new HttpServer(this);
+        communication = new Communication();
+        telegram = new TelegramBot(communication);
+        /*try {
+            vk = new ExtensionServer();
         } catch (Throwable throwable) {
             throwable.printStackTrace();
-        }
-    }
-
-
-    public String onUpdateReceivedTelegram(Update data){
-        /*if(data.getMessage().equals("/login")){
-
         }*/
-        return "";
     }
 
-    public String onUpdateReceivedVk(String urlData) {//тут выдаём json массив из действий
-        return "";
-    }
-
-    @Override
-    public String getVkResponse(HashMap<String, String> getDataMap) {
-        return "";
-    }
-
-    @Override
-    public String getTelegramResponse(String str) {
-        return "";
-    }
 }
 

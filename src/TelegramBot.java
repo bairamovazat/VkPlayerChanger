@@ -1,6 +1,22 @@
 /**
  * Created by Азат on 14.08.2017.
+ *
+ * Update{updateId=643527024, message=Message{}, inlineQuery=null, chosenInlineQuery=null, callbackQuery=null,
+ *        editedMessage=null, channelPost=null, editedChannelPost=null, shippingQuery=null, preCheckoutQuery=null}
+ *
+ * message=Message{messageId=115, from=User{...}, date=1505336720, chat=Chat{...}, forwardFrom=null,
+ *                 forwardFromChat=null, forwardDate=null, text='Шо', entities=null, audio=null, document=null,
+ *                 photo=null, sticker=null, video=null, contact=null, location=null, venue=null, pinnedMessage=null,
+ *                 newChatMembers=null, leftChatMember=null, newChatTitle='null', newChatPhoto=null, deleteChatPhoto=null,
+ *                 groupchatCreated=null, replyToMessage=null, voice=null, caption='null', superGroupCreated=null,
+ *                 channelChatCreated=null, migrateToChatId=null, migrateFromChatId=null, editDate=null, game=null,
+ *                 forwardFromMessageId=null, invoice=null, successfulPayment=null, videoNote=null}
+ *
+ * from=User{id=170717443, firstName='Azat', lastName='null', userName='bairamov_azat', languageCode='ru-RU'};
+ * chat=Chat{id=170717443, type='private', title='null', firstName='Azat', lastName='null', userName='bairamov_azat',
+ *           allMembersAreAdministrators=null, photo=null, description='null', inviteLink='null'}
  */
+
 
 import org.telegram.telegrambots.ApiContextInitializer;
 import org.telegram.telegrambots.api.objects.*;
@@ -11,12 +27,23 @@ import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 
 import java.util.Map;
 
-public class TelegramBot extends TelegramLongPollingBot {
+public class TelegramBot extends TelegramLongPollingBot implements Runnable {
+
     private Map<String,String> map;
     private VkController control = null;
-    TelegramBot(VkController controller){
-        this.control = controller;
+    private Thread bootThread = null;
+    private Communication communication = null;
+    static {
         ApiContextInitializer.init();
+    }
+
+    TelegramBot(Communication communication){
+        this.communication = communication;
+        this.run();
+    }
+
+    @Override
+    public void run() {
         TelegramBotsApi telegramBotsApi = new TelegramBotsApi();
         try {
             telegramBotsApi.registerBot(this);
@@ -24,7 +51,6 @@ public class TelegramBot extends TelegramLongPollingBot {
             e.printStackTrace();
         }
     }
-
 
     @Override
     public String getBotUsername() {
@@ -37,9 +63,14 @@ public class TelegramBot extends TelegramLongPollingBot {
     }
 
     @Override
+    public void onClosing() {
+
+    }
+
+    @Override
     public void onUpdateReceived(Update update) {
         Message message = update.getMessage();
-        sendMsg(message, control.onUpdateReceivedTelegram(update));
+        sendMsg(message, communication.getResponseToTelegramMessage(message));
 
         /*if (message != null && message.hasText()) {
             processingMessage(message);

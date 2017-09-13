@@ -101,10 +101,12 @@ public class utils {
     public static HashMap<String,String> urlDataToMap(String urlData){
         urlData = urlData.replaceAll("\\?|\\/","");
         HashMap<String, String> hashMap = new HashMap<String, String>();
-        String[] urlDataArray = urlData.split("%");
+        String[] urlDataArray = urlData.split("&");
         for(String data : urlDataArray){
             String[] dataString = data.split("=");
-            hashMap.put(dataString[0],dataString[1]);
+            if(dataString.length > 1) {
+                hashMap.put(dataString[0], dataString[1]);
+            }
         }
         return hashMap;
     }

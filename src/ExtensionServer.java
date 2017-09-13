@@ -5,19 +5,18 @@ import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.HashMap;
-import java.util.concurrent.SynchronousQueue;
 import java.util.concurrent.TimeUnit;
 
 /**
  * Created by yar 09.09.2009
  */
-public class HttpServer {
+public class ExtensionServer {
 
     public static void main(String[] args) throws Throwable {
-        HttpServer server = new HttpServer();
+        ExtensionServer server = new ExtensionServer();
     }
 
-    HttpServer() throws Throwable{
+    ExtensionServer() throws Throwable{
         ServerSocket ss = new ServerSocket(8080);
         SocketProcessor socketProcessor = null;
         while (true) {
@@ -28,25 +27,11 @@ public class HttpServer {
         }
     }
 
-    HttpServer(VkController answerObj) throws Throwable{
-        ServerSocket ss = new ServerSocket(8080);
-        SocketProcessor socketProcessor = null;
-        while (true) {
-            Socket s = ss.accept();
-
-            System.err.println("Client accepted");
-            new SocketProcessor(s, answerObj);
-        }
-    }
-
-
-
     private static class SocketProcessor implements Runnable {
 
         private Socket s;
         private InputStream is;
         private OutputStream os;
-        private VkController answerObj;
         private String headers[];
 
         private SocketProcessor(Socket s) throws Throwable {
@@ -56,12 +41,12 @@ public class HttpServer {
             new Thread(this);
         }
 
-        private SocketProcessor(Socket s, VkController answerObj) throws Throwable {
+        /*private SocketProcessor(Socket s, VkController answerObj) throws Throwable {
             this.answerObj = answerObj;
             this.s = s;
             this.is = s.getInputStream();
             this.os = s.getOutputStream();
-        }
+        }*/
 
         public void run() {
 
@@ -82,6 +67,7 @@ public class HttpServer {
             }
             System.err.println("Client processing finished");
         }
+
         private String defaultResponse(){
             HashMap<String, String> getDataMap = utils.urlDataToMap(this.headers[1]);
 
@@ -103,13 +89,7 @@ public class HttpServer {
 
 
         private void sendResponse(){
-            String response;
-            if(this.answerObj != null){
-                response = this.answerObj.getVkResponse(utils.urlDataToMap(this.headers[1]));
-            }else{
-                response = defaultResponse();
-            }
-            writeResponse(response);
+            writeResponse("");
         }
 
 

@@ -1,3 +1,4 @@
+package models;
 /**
  * Created by Азат on 14.08.2017.
  *
@@ -24,20 +25,21 @@ import org.telegram.telegrambots.exceptions.TelegramApiException;
 import org.telegram.telegrambots.TelegramBotsApi;
 import org.telegram.telegrambots.api.methods.send.SendMessage;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
+import services.Communication;
 
 import java.util.Map;
 
 public class TelegramBot extends TelegramLongPollingBot implements Runnable {
 
     private Map<String,String> map;
-    private VkController control = null;
     private Thread bootThread = null;
     private Communication communication = null;
+
     static {
         ApiContextInitializer.init();
     }
 
-    TelegramBot(Communication communication){
+    public TelegramBot(Communication communication){
         this.communication = communication;
         this.run();
     }
@@ -93,9 +95,6 @@ public class TelegramBot extends TelegramLongPollingBot implements Runnable {
         }else{
             System.out.printf("Пустое сообщение");
         }*/
-    }
-    private void processingMessage(Message message){
-
     }
 
     private void sendMsg(Message message, String text) {

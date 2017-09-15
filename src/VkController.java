@@ -1,6 +1,6 @@
-import org.telegram.telegrambots.api.objects.Update;
-
-import java.util.HashMap;
+import models.ExtensionServer;
+import models.TelegramBot;
+import services.Communication;
 
 /**
  * Created by Азат on 03.09.2017.
@@ -15,13 +15,13 @@ public class VkController {
     private ExtensionServer vk = null;
     private Communication communication = null;
     VkController(){
-        communication = new Communication();
-        telegram = new TelegramBot(communication);
-        /*try {
-            vk = new ExtensionServer();
+        communication = new services.Communication();
+        //telegram = new models.TelegramBot(communication);
+        try {
+            vk = new ExtensionServer(communication);
         } catch (Throwable throwable) {
             throwable.printStackTrace();
-        }*/
+        }
     }
 
 }

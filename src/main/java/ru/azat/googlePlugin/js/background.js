@@ -1,53 +1,76 @@
-
 var counter = 1;
 
-class BgProcess {
+function Background() {
 
-    BgProcess(){
-      var serverUrl = "http://127.0.0.1:8080"
-    }
+    let that = {};
 
-    function subscribe(url) {
-      var xhr = new XMLHttpRequest();
+    that.constructor = function () {
+        that.authUrl = "/login";
+        that.serverUrl = localStorage["server"] || "http://127.0.0.1:8000";
+        that.token = localStorage["token"] || null;
+        that.popupConnection = PopupConnection();
+        that.popupConnection.addHandler(that.popupHandler);
+        that.popupConnection.addHandler((data) => {
+            console.log(data);
+        });
+    };
 
-      xhr.onreadystatechange = function() {
-        if (xhr.readyState != 4) return;
-
-        if (xhr.status == 200) {
-          onMessage(xhr.responseText);
-        } else {
-          onError(xhr);
+    that.popupHandler = function (message) {
+        if (message.command === "auth") {
+            that.auth(message.data.login, message.data.password);
         }
+    };
 
-        subscribe(url);
-      }
-      xhr.open("GET", url, true);
-      xhr.send();
-    }
+    that.auth = function (login, password) {
+        axios.post(that.serverUrl + that.authUrl, {"login": login, "password": password})
+            .then(function (response) {
+                let token = response.data.value;
+                that.token = token;
+                localStorage["token"] = token;
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+    };
 
-
-
-}
-function ready(){
-    setListener();
-}
-
-function setListener(){
-  chrome.runtime.onMessageExternal.addListener(
-    function(request, sender, sendResponse) {
-      console.log(sender);
-      sendResponse(counter++);
-    });
+    that.constructor();
+    return that;
 }
 
-function sendMessageOnTab(message, tabId){
-    chrome.tabs.sendRequest(tabId,message);
+function PopupConnection() {
+    let that = {};
+
+    that.constructor = function () {
+        that.handlers = [];
+        that.port = {};
+        chrome.extension.onConnect.addListener(function (port) {
+            that.port = port;
+            that.port.onMessage.addListener(that.accept);
+        });
+    };
+
+    that.addHandler = function (handler) {
+        that.handlers.push(handler);
+    };
+
+    that.send = function (message) {
+        that.port.postMessage(message);
+    };
+
+    that.accept = function (message) {
+        that.handlers.forEach(h => {
+            h(message);
+        })
+    };
+
+    that.constructor();
+    return that;
 }
 
-function onUpdateReceived(request, sender, sendResponse){
-    var i = 0;
+var background = {};
+
+function main() {
+    background = Background();
 }
 
-
-console.log("listener");
-ready();
+main();

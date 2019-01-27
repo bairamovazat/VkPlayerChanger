@@ -3,45 +3,36 @@ package ru.azat.server.controlers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-import ru.azat.forms.UserForm;
-import ru.azat.models.User;
-import ru.azat.services.UsersService;
-import ru.azat.transfer.UserDto;
+import ru.azat.server.forms.UserForm;
+import ru.azat.server.models.User;
+import ru.azat.server.security.authentications.TokenAuthentication;
+import ru.azat.server.services.AuthenticationService;
+import ru.azat.server.services.UsersService;
+import ru.azat.server.transfer.UserDto;
 
 import java.util.List;
 
-import static ru.azat.transfer.UserDto.from;
+import static ru.azat.server.transfer.UserDto.from;
 
 @RestController
 public class UsersController {
+
     @Autowired
     private UsersService usersService;
+
+    @Autowired
+    private AuthenticationService service;
 
     @GetMapping("/users")
     public List<UserDto> getUsers() {
         return from(usersService.findAll());
     }
 
-    @GetMapping("/auth")
-    public Authentication getAuthentication(Authentication authentication) {
-        return authentication;
-    }
 
-    @GetMapping("/users/{user-id}")
-    public User getUser(@PathVariable("user-id") Long userId) {
-        return usersService.findOne(userId);
-    }
-
-    @GetMapping("/test")
-    public User getTestUser(){
-        return User.builder()
-                .name("Azat")
-                .login("bairamovazat")
-                .build();
-    }
-    @PostMapping("/users")
+    @PostMapping("/sign-up")
     public ResponseEntity<Object> addUser(@RequestBody UserForm userForm) {
         usersService.signUp(userForm);
         return ResponseEntity.ok().build();

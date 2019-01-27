@@ -3,11 +3,11 @@ package ru.azat.server.services;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-import ru.azat.forms.UserForm;
-import ru.azat.models.Role;
-import ru.azat.models.State;
-import ru.azat.models.User;
-import ru.azat.repositories.UsersRepository;
+import ru.azat.server.forms.UserForm;
+import ru.azat.server.models.Role;
+import ru.azat.server.models.State;
+import ru.azat.server.models.User;
+import ru.azat.server.repositories.UserRepository;
 
 import java.util.List;
 
@@ -15,7 +15,7 @@ import java.util.List;
 public class UsersServiceImpl implements UsersService {
 
     @Autowired
-    private UsersRepository usersRepository;
+    private UserRepository userRepository;
 
     @Autowired
     private PasswordEncoder passwordEncoder;
@@ -32,16 +32,16 @@ public class UsersServiceImpl implements UsersService {
                 .state(State.ACTIVATED)
                 .build();
 
-        usersRepository.save(user);
+        userRepository.save(user);
     }
 
     @Override
     public List<User> findAll() {
-        return usersRepository.findAll();
+        return userRepository.findAll();
     }
 
     @Override
     public User findOne(Long userId) {
-        return usersRepository.findOneById(userId).get();
+        return userRepository.findOneById(userId).get();
     }
 }

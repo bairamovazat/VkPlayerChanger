@@ -4,7 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import ru.azat.models.Token;
+import ru.azat.server.models.Token;
 
 @Data
 @NoArgsConstructor

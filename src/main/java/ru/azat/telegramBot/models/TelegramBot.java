@@ -20,11 +20,13 @@ package ru.azat.telegramBot.models;
 
 
 import org.telegram.telegrambots.ApiContextInitializer;
-import org.telegram.telegrambots.api.objects.*;
-import org.telegram.telegrambots.exceptions.TelegramApiException;
-import org.telegram.telegrambots.TelegramBotsApi;
-import org.telegram.telegrambots.api.methods.send.SendMessage;
+
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
+import org.telegram.telegrambots.meta.TelegramBotsApi;
+import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
+import org.telegram.telegrambots.meta.api.objects.Message;
+import org.telegram.telegrambots.meta.api.objects.Update;
+import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 import ru.azat.telegramBot.services.Communication;
 
 import java.util.Map;
@@ -103,11 +105,11 @@ public class TelegramBot extends TelegramLongPollingBot implements Runnable {
         sendMessage.setChatId(message.getChatId().toString());
         //sendMessage.setReplyToMessageId(message.getMessageId());
         sendMessage.setText(text);
-        try {
-            sendMessage(sendMessage);
-        } catch (TelegramApiException e) {
-            e.printStackTrace();
-        }
+//        try {
+////            sendMessage(sendMessage);
+//        } catch (TelegramApiException e) {
+//            e.printStackTrace();
+//        }
     }
 
 

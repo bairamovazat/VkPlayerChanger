@@ -2,22 +2,79 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="68b38ae0-27b5-40e2-ab97-13e39196db2e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/models/SocketProcessor.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/TelegramBot/Communication.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/TelegramBot/ExtensionServer$SocketProcessor.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/TelegramBot/ExtensionServer.class" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Communication.java" afterPath="$PROJECT_DIR$/src/services/Communication.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/ExtensionServer.java" afterPath="$PROJECT_DIR$/src/models/ExtensionServer.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/TelegramBot.java" afterPath="$PROJECT_DIR$/src/models/TelegramBot.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/utils.java" afterPath="$PROJECT_DIR$/src/models/utils.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TelegramBot/VkController.class" afterPath="$PROJECT_DIR$/out/production/TelegramBot/VkController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/VkController.java" afterPath="$PROJECT_DIR$/src/VkController.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/pom.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ru/azat/server/app/Application.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ru/azat/server/controlers/LoginController.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ru/azat/server/controlers/UsersController.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ru/azat/server/forms/LoginForm.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ru/azat/server/forms/UserForm.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ru/azat/server/models/Role.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ru/azat/server/models/State.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ru/azat/server/models/Token.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ru/azat/server/models/User.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ru/azat/server/repositories/TokensRepository.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ru/azat/server/repositories/UsersRepository.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ru/azat/server/security/authentications/TokenAuthentication.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ru/azat/server/security/config/SecurityConfig.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ru/azat/server/security/details/UserDetailsImpl.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ru/azat/server/security/details/UserDetailsServiceImpl.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ru/azat/server/security/filters/TokenAuthFilter.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ru/azat/server/security/provider/TokenAuthenticationProvider.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ru/azat/server/services/LoginService.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ru/azat/server/services/LoginServiceImpl.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ru/azat/server/services/UsersService.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ru/azat/server/services/UsersServiceImpl.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ru/azat/server/transfer/TokenDto.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ru/azat/server/transfer/UserDto.java" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/TelegramBot.iml" afterPath="$PROJECT_DIR$/TelegramBot.iml" />
+      <change beforePath="$PROJECT_DIR$/libss/telegrambots-3.2-jar-with-dependencies.jar" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/production/TelegramBot/Main.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/production/TelegramBot/VkController.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/production/TelegramBot/googlePlagin/background.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/production/TelegramBot/googlePlagin/icon/128x128.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/production/TelegramBot/googlePlagin/icon/16x16.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/production/TelegramBot/googlePlagin/icon/32x32.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/production/TelegramBot/googlePlagin/js/background.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/production/TelegramBot/googlePlagin/js/change_vk_js.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/production/TelegramBot/googlePlagin/js/jquery-3.2.1.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/production/TelegramBot/googlePlagin/js/popup.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/production/TelegramBot/googlePlagin/js/vk.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/production/TelegramBot/googlePlagin/manifest.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/production/TelegramBot/googlePlagin/popup.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/production/TelegramBot/models/ExtensionServer$1.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/production/TelegramBot/models/ExtensionServer$SocketProcessor.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/production/TelegramBot/models/ExtensionServer.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/production/TelegramBot/models/SocketProcessor.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/production/TelegramBot/models/TelegramBot.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/production/TelegramBot/models/utils.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/production/TelegramBot/services/Communication.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/VkController.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/googlePlagin/background.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/googlePlagin/icon/128x128.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/googlePlagin/icon/16x16.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/googlePlagin/icon/32x32.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/googlePlagin/js/background.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/googlePlagin/js/change_vk_js.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/googlePlagin/js/jquery-3.2.1.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/googlePlagin/js/popup.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/googlePlagin/js/vk.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/googlePlagin/manifest.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/googlePlagin/popup.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/models/ExtensionServer.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/models/SocketProcessor.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/models/TelegramBot.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/models/utils.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/services/Communication.java" afterPath="" />
     </list>
     <ignored path="TelegramBot.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
+    <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -45,22 +102,20 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="VkController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/VkController.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ru/azat/telegramBot/VkController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="17" column="53" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="119">
+              <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="ExtensionServer.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/models/ExtensionServer.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ru/azat/telegramBot/models/ExtensionServer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="358">
-              <caret line="107" column="0" lean-forward="false" selection-start-line="107" selection-start-column="0" selection-end-line="107" selection-end-column="0" />
+            <state relative-caret-position="1547">
+              <caret line="91" column="21" lean-forward="false" selection-start-line="91" selection-start-column="21" selection-end-line="91" selection-end-column="21" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -68,30 +123,86 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TelegramBot.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/models/TelegramBot.java">
+      <file leaf-file-name="TelegramBot.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ru/azat/telegramBot/models/TelegramBot.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1152">
-              <caret line="68" column="0" lean-forward="false" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
+            <state relative-caret-position="306">
+              <caret line="18" column="3" lean-forward="false" selection-start-line="18" selection-start-column="3" selection-end-line="18" selection-end-column="3" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <marker date="1505463312166" expanded="true" signature="16:56" ph="/**...*/" />
-                <marker date="1505463312166" expanded="true" signature="2895:3676" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Communication.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/services/Communication.java">
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="23" column="75" lean-forward="false" selection-start-line="23" selection-start-column="75" selection-end-line="23" selection-end-column="75" />
+            <state relative-caret-position="408">
+              <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" column="12" lean-forward="true" selection-start-line="1" selection-start-column="12" selection-end-line="1" selection-end-column="12" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Application.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ru/azat/server/app/Application.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#637#638#0" expanded="true" />
-                <element signature="e#687#688#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="background.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ru/azat/googlePlugin/js/background.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="utils.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ru/azat/telegramBot/models/utils.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1238">
+              <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ru/azat/telegramBot/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SocketProcessor.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ru/azat/telegramBot/models/SocketProcessor.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="3" column="40" lean-forward="false" selection-start-line="3" selection-start-column="40" selection-end-line="3" selection-end-column="40" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -142,8 +253,12 @@
         <option value="$PROJECT_DIR$/src/models/TelegramBot.java" />
         <option value="$PROJECT_DIR$/src/models/SocketProcessor.java" />
         <option value="$PROJECT_DIR$/src/services/Communication.java" />
-        <option value="$PROJECT_DIR$/src/VkController.java" />
         <option value="$PROJECT_DIR$/src/models/ExtensionServer.java" />
+        <option value="$PROJECT_DIR$/src/VkController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ru/azat/server/app/Application.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ru/azat/telegramBot/VkController.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -156,14 +271,26 @@
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
-        <option name="mavenHome" value="Bundled (Maven 3)" />
+        <option name="localRepository" value="C:\m2repository" />
+        <option name="userSettingsFile" value="C:\Users\Azat\.m2\settings2.xml" />
       </MavenGeneralSettings>
     </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="1" />
-    <option name="y" value="26" />
-    <option name="width" value="1366" />
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand />
+      <select />
+    </treeState>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-6" />
+    <option name="y" value="42" />
+    <option name="width" value="1284" />
     <option name="height" value="744" />
   </component>
   <component name="ProjectView">
@@ -181,7 +308,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
+      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -195,23 +322,11 @@
               <item name="VkPlayerChanger" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="VkPlayerChanger" type="b2602c69:ProjectViewProjectNode" />
-              <item name="VkPlayerChanger" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="models" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="VkPlayerChanger" type="b2602c69:ProjectViewProjectNode" />
-              <item name="VkPlayerChanger" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="services" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
+      <pane id="AndroidView" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -226,11 +341,17 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="PostgreSQL" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RecentsManager">
     <key name="ExtractSuperBase.RECENT_KEYS">
       <recent name="" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Azat\Documents\IdeaProjects\VkPlayerChanger\src\main\java\ru\azat\googlePlugin" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Azat\Documents\IdeaProjects\VkPlayerChanger\src\main\java\ru\azat\server" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -246,9 +367,16 @@
     </option>
   </component>
   <component name="RunManager" selected="Application.VkController">
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <module />
+    </configuration>
     <configuration name="ExtensionServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" value="models.ExtensionServer" />
+      <option name="MAIN_CLASS_NAME" value="ru.azat.telegramBot.models.ExtensionServer" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -262,7 +390,7 @@
     </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" value="Main" />
+      <option name="MAIN_CLASS_NAME" value="ru.azat.telegramBot.Main" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -276,7 +404,7 @@
     </configuration>
     <configuration name="TelegramBot" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" value="models.TelegramBot" />
+      <option name="MAIN_CLASS_NAME" value="ru.azat.telegramBot.models.TelegramBot" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -304,7 +432,7 @@
     </configuration>
     <configuration name="VkController" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" value="VkController" />
+      <option name="MAIN_CLASS_NAME" value="ru.azat.telegramBot.VkController" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -315,13 +443,6 @@
       <option name="PASS_PARENT_ENVS" value="true" />
       <module name="TelegramBot" />
       <envs />
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <module />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
@@ -357,12 +478,6 @@
       <envs />
       <patterns />
     </configuration>
-    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
-      <module name="" />
-      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
-      <option name="PROGRAM_PARAMETERS" />
-      <predefined_log_file id="idea.log" enabled="true" />
-    </configuration>
     <configuration default="true" type="Remote" factoryName="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
       <option name="SERVER_MODE" value="false" />
@@ -396,6 +511,12 @@
       <envs />
       <properties />
       <listeners />
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file id="idea.log" enabled="true" />
     </configuration>
     <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
       <module name="" />
@@ -579,44 +700,47 @@
       <workItem from="1505454542978" duration="649000" />
       <workItem from="1505457654357" duration="935000" />
       <workItem from="1505461637529" duration="3609000" />
+      <workItem from="1548591156606" duration="1213000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6387000" />
+    <option name="totallyTimeSpent" value="7600000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1" y="26" width="1366" height="744" extended-state="0" />
+    <frame x="-8" y="-8" width="1296" height="1000" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36084142" sideWeight="0.5060606" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32928804" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.05151515" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27346277" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32847896" sideWeight="0.4969697" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36084142" sideWeight="0.5060606" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19255663" sideWeight="0.4939394" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32847896" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32847896" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2128788" sideWeight="0.5" order="5" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21278317" sideWeight="0.5" order="5" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.05151515" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32847896" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32730263" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27346277" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="9" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32847896" sideWeight="0.4969697" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -702,32 +826,8 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$PROJECT_DIR$/libss/telegrambots-3.2-jar-with-dependencies.jar!/org/telegram/telegrambots/api/objects/File.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/TelegramBot.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="30" column="27" lean-forward="false" selection-start-line="30" selection-start-column="24" selection-end-line="30" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/ExtensionServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="53" lean-forward="false" selection-start-line="19" selection-start-column="53" selection-end-line="19" selection-end-column="53" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/VkConnect.java" />
-    <entry file="file://$PROJECT_DIR$/src/models/utils.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/azat/telegramBot/models/utils.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -742,7 +842,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/TelegramBot.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/azat/telegramBot/models/TelegramBot.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
           <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
@@ -751,7 +851,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/WsConnect.java" />
     <entry file="file://$PROJECT_DIR$/src/VkConnect.java" />
-    <entry file="file://$PROJECT_DIR$/src/models/utils.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/azat/telegramBot/models/utils.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1105">
           <caret line="69" column="30" lean-forward="false" selection-start-line="69" selection-start-column="30" selection-end-line="69" selection-end-column="30" />
@@ -766,14 +866,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/TelegramBot.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/azat/telegramBot/models/TelegramBot.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="24" column="42" lean-forward="false" selection-start-line="24" selection-start-column="23" selection-end-line="24" selection-end-column="42" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/utils.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/azat/telegramBot/models/utils.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -827,56 +927,21 @@
     <entry file="file://$PROJECT_DIR$/src/WsConnect.java" />
     <entry file="jar://E:/Program Files/java/src.zip!/java/io/FileOutputStream.java" />
     <entry file="file://$PROJECT_DIR$/src/VkConnect.java" />
-    <entry file="file://$PROJECT_DIR$/src/googlePlagin/js/jquery-3.2.1.min.js">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/azat/googlePlugin/js/jquery-3.2.1.min.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-51">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/googlePlagin/manifest.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="21" column="25" lean-forward="false" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/googlePlagin/background.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="26" lean-forward="false" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/googlePlagin/js/popup.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="1" lean-forward="false" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/googlePlagin/js/background.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="44" lean-forward="false" selection-start-line="6" selection-start-column="44" selection-end-line="6" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://E:/Program Files/java/src.zip!/java/net/SocketInputStream.java" />
-    <entry file="file://$PROJECT_DIR$/src/models/ExtensionServer.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/azat/telegramBot/models/ExtensionServer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="4" lean-forward="false" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/googlePlagin/js/change_vk_js.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="829">
-          <caret line="76" column="20" lean-forward="false" selection-start-line="76" selection-start-column="20" selection-end-line="76" selection-end-column="20" />
         </state>
       </provider>
     </entry>
@@ -924,14 +989,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/googlePlagin/js/vk.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="8" lean-forward="false" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/googlePlagin/popup.html">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/azat/googlePlugin/popup.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="7" column="8" lean-forward="false" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="25" />
@@ -939,71 +997,141 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/utils.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/azat/telegramBot/services/Communication.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
+        <state relative-caret-position="391">
+          <caret line="23" column="75" lean-forward="false" selection-start-line="23" selection-start-column="75" selection-end-line="23" selection-end-column="75" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#605#606#0" expanded="false" />
+            <element signature="e#655#656#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/azat/googlePlugin/background.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="26" lean-forward="false" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/azat/googlePlugin/manifest.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="25" lean-forward="false" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/azat/googlePlugin/js/change_vk_js.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="66" column="5" lean-forward="false" selection-start-line="66" selection-start-column="5" selection-end-line="66" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/azat/googlePlugin/js/popup.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="1" lean-forward="false" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/azat/googlePlugin/js/vk.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="8" lean-forward="false" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/azat/telegramBot/models/SocketProcessor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="40" lean-forward="false" selection-start-line="3" selection-start-column="40" selection-end-line="3" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/azat/telegramBot/models/utils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1238">
           <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/azat/telegramBot/models/ExtensionServer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="19" lean-forward="false" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
+        <state relative-caret-position="1547">
+          <caret line="91" column="21" lean-forward="false" selection-start-line="91" selection-start-column="21" selection-end-line="91" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/azat/googlePlugin/js/background.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/SocketProcessor.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/azat/telegramBot/models/TelegramBot.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="40" lean-forward="false" selection-start-line="5" selection-start-column="40" selection-end-line="5" selection-end-column="40" />
+        <state relative-caret-position="306">
+          <caret line="18" column="3" lean-forward="false" selection-start-line="18" selection-start-column="3" selection-end-line="18" selection-end-column="3" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/azat/telegramBot/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/VkController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/azat/telegramBot/VkController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="17" column="53" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+        <state relative-caret-position="119">
+          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/azat/server/app/Application.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/ExtensionServer.java">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="358">
-          <caret line="107" column="0" lean-forward="false" selection-start-line="107" selection-start-column="0" selection-end-line="107" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="408">
+          <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/services/Communication.java">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="23" column="75" lean-forward="false" selection-start-line="23" selection-start-column="75" selection-end-line="23" selection-end-column="75" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#637#638#0" expanded="true" />
-            <element signature="e#687#688#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/TelegramBot.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1152">
-          <caret line="68" column="0" lean-forward="false" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1505463312166" expanded="true" signature="16:56" ph="/**...*/" />
-            <marker date="1505463312166" expanded="true" signature="2895:3676" ph="{...}" />
-          </folding>
+        <state relative-caret-position="17">
+          <caret line="1" column="12" lean-forward="true" selection-start-line="1" selection-start-column="12" selection-end-line="1" selection-end-column="12" />
+          <folding />
         </state>
       </provider>
     </entry>

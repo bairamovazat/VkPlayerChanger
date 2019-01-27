@@ -5,17 +5,17 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
-import ru.azat.repositories.UsersRepository;
+import ru.azat.server.repositories.UserRepository;
 
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {
     @Autowired
-    private UsersRepository usersRepository;
+    private UserRepository userRepository;
 
     @Override
     public UserDetails loadUserByUsername(String login) throws UsernameNotFoundException {
         return new
-                UserDetailsImpl(usersRepository.findOneByLogin(login)
+                UserDetailsImpl(userRepository.findOneByLogin(login)
                 .orElseThrow(IllegalArgumentException::new));
     }
 }

@@ -1,6 +1,6 @@
 package ru.azat.telegramBot.services;
 
-import org.telegram.telegrambots.api.objects.Message;
+import org.telegram.telegrambots.meta.api.objects.Message;
 
 import java.util.HashMap;
 import java.util.concurrent.TimeUnit;

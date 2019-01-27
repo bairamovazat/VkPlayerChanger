@@ -1,8 +1,9 @@
 package ru.azat.server.security.filters;
 
+import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
-import ru.azat.security.authentications.TokenAuthentication;
+import ru.azat.server.security.authentications.TokenAuthentication;
 
 import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;
@@ -10,6 +11,7 @@ import java.io.IOException;
 
 @Component
 public class TokenAuthFilter implements Filter {
+
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
 
@@ -17,16 +19,24 @@ public class TokenAuthFilter implements Filter {
 
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
-        HttpServletRequest request = (HttpServletRequest) servletRequest;
+        //TODO Костыль. Это метод вызывается 2 раза для 1 запроса. Пофиксить.
 
-        String token = request.getParameter("token");
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 
-        TokenAuthentication tokenAuthentication = new TokenAuthentication(token);
-        if (token == null) {
-            tokenAuthentication.setAuthenticated(false);
-        } else {
-            SecurityContextHolder.getContext().setAuthentication(tokenAuthentication);
+        if(authentication == null || !authentication.isAuthenticated()){
+            HttpServletRequest request = (HttpServletRequest) servletRequest;
+            String token = request.getHeader("Auth-Token");
+
+            if (token == null) {
+                token = request.getParameter("token");
+            }
+
+            if (token != null) {
+                authentication = new TokenAuthentication(token);
+                SecurityContextHolder.getContext().setAuthentication(authentication);
+            }
         }
+
         filterChain.doFilter(servletRequest, servletResponse);
     }
 

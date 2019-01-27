@@ -3,7 +3,7 @@ package ru.azat.server.transfer;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
-import ru.azat.models.User;
+import ru.azat.server.models.User;
 
 import java.util.List;
 import java.util.stream.Collectors;

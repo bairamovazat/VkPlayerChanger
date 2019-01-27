@@ -3,9 +3,9 @@ package ru.azat.server.security.details;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-import ru.azat.models.Role;
-import ru.azat.models.State;
-import ru.azat.models.User;
+import ru.azat.server.models.Role;
+import ru.azat.server.models.State;
+import ru.azat.server.models.User;
 
 import java.util.ArrayList;
 import java.util.Collection;

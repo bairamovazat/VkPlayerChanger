@@ -5,9 +5,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-import ru.azat.forms.LoginForm;
-import ru.azat.services.LoginService;
-import ru.azat.transfer.TokenDto;
+import ru.azat.server.forms.LoginForm;
+import ru.azat.server.forms.UserForm;
+import ru.azat.server.services.LoginService;
+import ru.azat.server.transfer.TokenDto;
 
 @RestController
 public class LoginController {
@@ -17,7 +18,7 @@ public class LoginController {
 
     @PostMapping("/login")
     public ResponseEntity<TokenDto> login(@RequestBody LoginForm loginForm) {
-        int i = 0;
         return ResponseEntity.ok(loginService.login(loginForm));
     }
+
 }

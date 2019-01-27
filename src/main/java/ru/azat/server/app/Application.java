@@ -10,9 +10,9 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 @SpringBootApplication
-@ComponentScan(basePackages = "ru.azat")
-@EnableJpaRepositories(basePackages = "ru.azat.repositories")
-@EntityScan(basePackages = "ru.azat.ru.azat.telegramBot.models")
+@ComponentScan(basePackages = "ru.azat.server")
+@EnableJpaRepositories(basePackages = "ru.azat.server.repositories")
+@EntityScan(basePackages = "ru.azat.server.models")
 public class Application {
     public static void main(String[] args) {
         SpringApplication.run(Application.class);

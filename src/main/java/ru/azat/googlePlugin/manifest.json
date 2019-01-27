@@ -11,7 +11,10 @@
 		"128": "icon/128x128.png"
 	},
 
-	"permissions": [],
+	"permissions": [
+		"storage",
+		"https://vk.com/*"
+	],
 
 	"browser_action": {
  		"default_title": "Управление плеером Vk",
@@ -26,11 +29,14 @@
     	"page": "background.html"
   	},
   	"web_accessible_resources":["js/change_vk_js.js"],
+
 	"content_scripts": [
     {
       "matches": [
         "http://vk.com/*",
-        "https://vk.com/*"
+        "https://vk.com/*",
+		  "http://*/*",
+		  "https://*/*"
        ],
       "js": [ "js/vk.js" ]
     }
